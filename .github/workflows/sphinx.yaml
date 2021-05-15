@@ -1,5 +1,5 @@
 name: Sphinx
-on: [push, pull-request]
+on: [push, pull_request]
 
 env:
   DEFAULT_BRANCH: "main"
