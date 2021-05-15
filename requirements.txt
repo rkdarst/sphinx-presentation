@@ -2,3 +2,6 @@ sphinx_rtd_theme
 sphinx
 sphinx-minipres
 sphinx-autobuild
+sphinx_rtd_theme_ext_color_contrast
+sphinx-togglebutton
+sphinx-copybutton

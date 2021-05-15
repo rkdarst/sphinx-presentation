@@ -1,0 +1,25 @@
+name: Sphinx
+on: [push, pull-request]
+
+env:
+  DEFAULT_BRANCH: "main"
+  PHINXOPTS: "-W --keep-going -T"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: |
+          pip install -r requirements.txt
+      - uses: ammaraskar/sphinx-problem-matcher@4c6790d5dc1b428125fa0cd9b82976507ce8f52c
+      - run: |
+          make dirhtml
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' && contains(github.ref, env.DEFAULT_BRANCH) }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/dirhtml/
+          force_orphan: true
