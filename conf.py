@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = '{Presentation Name}'
-copyright = '2021, {Author Name}'
-author = '{Author Name}'
+project = '{{Presentation Name}}'
+copyright = '2021, {{Author Name}}'
+author = '{{Author Name}}'
 
 
 # -- General configuration ---------------------------------------------------
